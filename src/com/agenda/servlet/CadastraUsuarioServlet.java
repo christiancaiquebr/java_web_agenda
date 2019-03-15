@@ -13,7 +13,14 @@ public class CadastraUsuarioServlet extends HttpServlet{
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.getParameter("name");
+		request.getParameter("telephone");
+		request.getParameter("e-mail");
+		request.getParameter("endereco");
+
 		System.out.println(request.getParameter("name"));
+		System.out.println(request.getParameter("telephone"));
+		System.out.println(request.getParameter("e-mail"));
+		System.out.println(request.getParameter("endereco"));
 		
 		
 	}
