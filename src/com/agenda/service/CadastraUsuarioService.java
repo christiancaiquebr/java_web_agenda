@@ -1,6 +1,11 @@
 package com.agenda.service;
 
-public class CadastraUsuarioService {
-	
+import com.agenda.model.Pessoa;
 
+public class CadastraUsuarioService {
+
+	public void cadastra(Pessoa pessoa) {
+		// TODO Auto-generated method stub
+		
+	} 
 }
