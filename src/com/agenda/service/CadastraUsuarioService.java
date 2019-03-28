@@ -1,6 +1,6 @@
 package com.agenda.service;
 
-import com.agenda.dao.PessoaDAO;
+import com.agenda.dao.PessoaDao;
 import com.agenda.model.Pessoa;
 
 
@@ -8,8 +8,8 @@ public class CadastraUsuarioService {
 
 	public void cadastra(Pessoa pessoa) {
 	
-		PessoaDAO canal = new PessoaDAO();
+		PessoaDao canal = new PessoaDao();
 		
-		canal.salvar(pessoa);
+		canal.cadastraDAO(pessoa);
 	} 
 }
