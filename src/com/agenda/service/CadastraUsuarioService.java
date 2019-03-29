@@ -10,6 +10,6 @@ public class CadastraUsuarioService {
 	
 		PessoaDao canal = new PessoaDao();
 		
-		canal.cadastraDAO(pessoa);
+		canal.cadastra(pessoa);
 	} 
 }

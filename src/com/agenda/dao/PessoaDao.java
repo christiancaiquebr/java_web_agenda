@@ -1,14 +1,15 @@
 package com.agenda.dao;
 
 import com.agenda.model.Pessoa;
+import com.mysql.jdbc.Connection;
 
 public class PessoaDao {
-	public void cadastraDAO(Pessoa pessoa) {
+	private Connection connection;
+	
+	public void cadastra(Pessoa pessoa) {
 		
-		System.out.println(pessoa.getNome());
-		System.out.println(pessoa.getEmail());		
-		System.out.println(pessoa.getTelephone());
-		System.out.println(pessoa.getEndereco());
+		String SQL = "insert into pessoas (nome, email, endereco, telefone) values (?,?,?,?)";
+		
 	}
 
 }
