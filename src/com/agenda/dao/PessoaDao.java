@@ -15,7 +15,7 @@ public class PessoaDao {
 	
 	public void cadastra(Pessoa pessoa) {
 		
-		String SQL = "insert into pessoa (nome, email, endereço, telefone) values (?,?,?,?)";
+		String SQL = "insert into pessoa (nome, email, endereco, telefone) values (?,?,?,?)";
 		
 		try {
 			
@@ -56,7 +56,7 @@ public class PessoaDao {
 				Pessoa pessoa = new Pessoa ();
 				pessoa.setNome(rs.getString("nome"));
 				pessoa.setEmail(rs.getString("email"));
-				pessoa.setEndereco(rs.getString("endereço"));
+				pessoa.setEndereco(rs.getString("endereco"));
 				pessoa.setTelephone(rs.getString("telefone"));
 				pessoas.add(pessoa);
 				
