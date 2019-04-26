@@ -28,12 +28,10 @@ public class ListaUsuarioServlet extends HttpServlet {
 		
 		List<Pessoa> pessoas = service.buscaPessoas();
 		
-		for (Pessoa pessoa : pessoas) {
-			System.out.println(pessoa.getNome());
-			System.out.println(pessoa.getEmail());
-			System.out.println(pessoa.getTelephone());
-			System.out.println(pessoa.getEndereco());
-		}
+		req.setAttribute("pessoas", pessoas);
+		
+		req.getRequestDispatcher("listar_contatos.jsp").forward(req, resp);
+		
 		
 	}
 	
