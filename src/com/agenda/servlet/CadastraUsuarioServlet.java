@@ -31,14 +31,7 @@ public class CadastraUsuarioServlet extends HttpServlet{
 		
 		service.cadastra(pessoa);
 		
-		
-		
-		
-		/*System.out.println(request.getParameter("name"));
-		System.out.println(request.getParameter("telephone"));
-		System.out.println(request.getParameter("e-mail"));
-		System.out.println(request.getParameter("endereco"));*/
-		
+		response.sendRedirect("busca-contatos");
 		
 	}
 

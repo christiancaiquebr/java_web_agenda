@@ -10,6 +10,28 @@
 <title>Gerenciamento de Dados</title>
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" a href="cadastro.html">Cadastro</a>
+      </li>
+      <li class="nav-item">
+        <a href="busca-contatos" class="nav-link">Lista de Contatos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 <div class="container">
 	<table class="table">
 		<tr>
@@ -18,22 +40,15 @@
 			<th>Telefone</th>
 			<th>Endereço</th>
 		</tr>
-		<c:forEach var="pessoa" items="${contatos}">
+		<c:forEach var="pessoa" items="${pessoas}">
 			<tr>	
 				<td>${pessoa.nome}</td>
 				<td>${pessoa.email}</td>
-				<td>${pessoa.telefone}</td>
+				<td>${pessoa.telephone}</td>
 				<td>${pessoa.endereco}</td>
+				<td><a href="remover">Remover</a></td>
 			</tr>
 		</c:forEach>
-		<tr>
-			<td>christian</td>
-			<td>christian.caique@hotmail.com</td>
-			<td>11984456595</td>
-			<td>rua b</td>
-		</tr>
-		
-		
 		
 	</table>
 </div>

@@ -23,6 +23,12 @@ public class CadastraUsuarioService {
 		PessoaDao dao = new PessoaDao();
 		return dao.buscaPessoas();
 	}
+	
+	public void remove(Pessoa pessoa) {
+		PessoaDao dao = new PessoaDao();
+		dao.remove(pessoa);
+		
+	}
 
 }
 

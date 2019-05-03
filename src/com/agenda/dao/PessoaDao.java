@@ -75,5 +75,10 @@ public class PessoaDao {
 		}
 		return null;
 	}
+	
+	public void remove(Pessoa pessoa) {
+		
+		
+	}
 
 }
