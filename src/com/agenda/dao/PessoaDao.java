@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.agenda.model.Pessoa;
 import com.agenda.util.ConnectionFactory;
-import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.Connection;import com.sun.corba.se.impl.ior.GenericTaggedComponent;
 
 public class PessoaDao {
 	private Connection connection;
@@ -54,6 +54,7 @@ public class PessoaDao {
 			while (rs.next()) {
 				
 				Pessoa pessoa = new Pessoa ();
+				pessoa.setId(rs.getLong("id"));
 				pessoa.setNome(rs.getString("nome"));
 				pessoa.setEmail(rs.getString("email"));
 				pessoa.setEndereco(rs.getString("endereco"));
@@ -77,6 +78,18 @@ public class PessoaDao {
 	}
 	
 	public void remove(Pessoa pessoa) {
+		
+		String SQL = "delete from pessoa where id=?";
+		try {
+		
+		this.connection = new ConnectionFactory().getConnection();
+		PreparedStatement stmt = connection.prepareStatement(SQL);
+		stmt.setLong(1, pessoa.getId());
+		stmt.execute();
+		stmt.close();
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
 		
 		
 	}

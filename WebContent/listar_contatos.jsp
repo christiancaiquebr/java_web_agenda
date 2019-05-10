@@ -21,7 +21,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" a href="cadastro.html">Cadastro</a>
+        <a class="nav-link" a href="cadastro.jsp">Cadastro</a>
       </li>
       <li class="nav-item">
         <a href="busca-contatos" class="nav-link">Lista de Contatos</a>
@@ -35,18 +35,20 @@
 <div class="container">
 	<table class="table">
 		<tr>
+			<th>id</th>
 			<th>Nome</th>
 			<th>E-mail</th>
 			<th>Telefone</th>
 			<th>Endereço</th>
 		</tr>
 		<c:forEach var="pessoa" items="${pessoas}">
-			<tr>	
+			<tr>
+				<td>${pessoa.id}</td>	
 				<td>${pessoa.nome}</td>
 				<td>${pessoa.email}</td>
 				<td>${pessoa.telephone}</td>
 				<td>${pessoa.endereco}</td>
-				<td><a href="remover">Remover</a></td>
+				<td><a href="remover?id=${pessoa.id}">Remover</a></td>
 			</tr>
 		</c:forEach>
 		

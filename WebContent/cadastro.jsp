@@ -25,7 +25,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" a href="cadastro.html">Cadastro</a>
+        <a class="nav-link" a href="cadastro.jsp">Cadastro</a>
       </li>
       <li class="nav-item">
         <a href="busca-contatos" class="nav-link">Lista de Contatos</a>
@@ -59,9 +59,9 @@
 					data-mask="(99)9999-9999">
 			</div>
 			<div class="form-group col-md-4">
-				<label for="name">EndereÃ§o: </label> <input type="text"
+				<label for="name">Endereço: </label> <input type="text"
 					class="form-control" id="endereco" name="endereco"
-					placeholder="Digite seu endereÃ§o...">
+					placeholder="Digite seu endereço...">
 			</div>
 			<div>
 				<button type="submit" class="btn btn-primary">Enviar</button>

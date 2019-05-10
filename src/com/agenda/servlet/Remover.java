@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.agenda.model.Pessoa;
 import com.agenda.service.CadastraUsuarioService;
 
 @WebServlet("/remover")
@@ -19,7 +20,15 @@ public class Remover extends HttpServlet {
 		
 		CadastraUsuarioService service = new CadastraUsuarioService();
 		
-		service.remove(null);
+		long id = Long.parseLong(req.getParameter("id"));
+		
+		Pessoa pessoa = new Pessoa();
+		pessoa.setId(id);
+		
+		service.remove(pessoa);
+		
+		res.sendRedirect("busca-contatos");
+		
 	}
 }
 
