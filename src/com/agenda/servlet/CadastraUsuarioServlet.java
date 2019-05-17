@@ -12,8 +12,24 @@ import com.agenda.service.CadastraUsuarioService;
 
 public class CadastraUsuarioServlet extends HttpServlet{
 	
+	CadastraUsuarioService service = new CadastraUsuarioService();
+	
+	service.cadastra(pessoa);
+	
 	@Override
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		if(null != request.getParameter("id") && !request.getParameter("id").equals(""));
+			this.service.editar(pessoa);
+			
+			pessoa.setId(Long.parseLong(request.getParameter("id")));
+			
+	}	else {
+		
+			service.salvar(pessoa);
+		}
+	
+	response.sendRedirect("busca-contatos");
 		
 		request.setCharacterEncoding("UTF-8");	
 		request.getParameter("name");
@@ -28,12 +44,10 @@ public class CadastraUsuarioServlet extends HttpServlet{
 		pessoa.setTelephone(request.getParameter("telephone"));
 		pessoa.setEndereco(request.getParameter("endereco"));
 		
-		CadastraUsuarioService service = new CadastraUsuarioService();
 		
-		service.cadastra(pessoa);
+	}
 		
-		response.sendRedirect("busca-contatos");
 		
 	}
 
-}
+

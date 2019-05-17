@@ -6,6 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
+
 import com.agenda.model.Pessoa;
 import com.agenda.util.ConnectionFactory;
 import com.mysql.jdbc.Connection;import com.sun.corba.se.impl.ior.GenericTaggedComponent;
@@ -89,9 +91,36 @@ public class PessoaDao {
 		stmt.close();
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
+	}
+}
+		
+		public void editar (Pessoa pessoa) {
+			String SQL = "update pessoas set"
+					+ "nome=?, "
+					+ "email=?, "
+					+ "telefone=?, "
+					+ "endereco=?, "
+					+ "where id=?, ";
+			
+			try {
+				this.connection = new ConnectionFactory().getConnection();
+				PreparedStatement stmt = this.connection.prepareStatement(SQL);
+				
+				stmt.setString(1, pessoa.getNome());
+				stmt.setString(2, pessoa.getEmail());
+				stmt.setString(3, pessoa.getTelephone());
+				stmt.setString(4, pessoa.getEndereco());
+				stmt.setLong(5, pessoa.getId());
+				stmt.execute();
+				
+			}catch(SQLException e) {
+				
+				throw new RuntimeException(e);
+				
+			}
 		}
 		
 		
-	}
+	
 
 }

@@ -48,7 +48,12 @@
 				<td>${pessoa.email}</td>
 				<td>${pessoa.telephone}</td>
 				<td>${pessoa.endereco}</td>
-				<td><a href="remover?id=${pessoa.id}">Remover</a></td>
+				<td>
+					<a href="remover?id=${pessoa.id}">Remover</a>
+				</td>
+				<td>
+					<a href="listar_contatos.jsp?id=${pessoa.id}&nome=${pessoa.nome}&email=${pessoa.email}&endereco=${pessoa.endereco}&telefone=${pessoa.telephone}">Editar</a>
+				</td>
 			</tr>
 		</c:forEach>
 		

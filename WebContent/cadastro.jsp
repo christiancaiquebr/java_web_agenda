@@ -44,22 +44,25 @@
 		<div class="form-row">
 			<div class="form-group col-md-4">
 				<label for="name">Nome: </label> <input type="text"
+					value="${param.nome}"
 					class="form-control" id="name" name="name"
 					placeholder="Digite seu nome...">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="email">Email: </label> <input type="email"
-					class="form-control" id="email" placeholder="exemplo@exemplo.com"
+					class="form-control" value="${param.email}" id="email" placeholder="exemplo@exemplo.com"
 					name="e-mail">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="telefone">Telefone: </label> <input type="text"
+					value="${param.telephone}"
 					class="form-control" id="telefone" placeholder="(__)____-____"
 					name="telephone"
 					data-mask="(99)9999-9999">
 			</div>
 			<div class="form-group col-md-4">
 				<label for="name">Endereço: </label> <input type="text"
+					value="${param.endereco}"
 					class="form-control" id="endereco" name="endereco"
 					placeholder="Digite seu endereço...">
 			</div>

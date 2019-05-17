@@ -27,7 +27,11 @@ public class CadastraUsuarioService {
 	public void remove(Pessoa pessoa) {
 		PessoaDao dao = new PessoaDao();
 		dao.remove(pessoa);
-		
+	}
+	
+	public void editar(Pessoa pessoa) {
+		PessoaDao dao = new PessoaDao();
+		dao.editar(pessoa);
 	}
 
 }
